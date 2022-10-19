@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20/10 Hạnh Phúc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="./img/download.jfif">
+<link rel="stylesheet" href="./css/Style.css">
+
+<!--Tất cả các anh trong 1 folder sẽ chạy lần lượt time 5s 1 lần đổi-->
+<script type="text/javascript">
+  window.onload = function(){
+    setTimeout("switch_Image()", 5000);
+  }
+  var current = 1;
+  var num_image = 11;
+  function switch_Image(){
+      current++;
+      document.images['imglc'].src ='img/imglc/lc' + current + '.jpg';
+     if(current < num_image){
+       setTimeout("switch_Image()", 5000);
+     }else if(current == num_image){
+       current = 0;
+       setTimeout("switch_Image()", 5000);
+     }
+ }
+</script>
+
+</head>
+<body style="background-image:url(./img/thiep_chuc/images.jfif);">
+<div class="container-fluid">
+    <div class="row">
+    
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<a href="Content.html">
+        <img  name="imglc" src="img/imglc/lc5.jpg" alt="" style="width:650px; height:570px; margin-top:20px">
+        </a>
+    </div>
+   
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+		<center>
+            <audio id="time" src="./audio/CoChutNgotNgao-UongToLangSilenceWangBY2-3710201.mp3" controls autoplay="autoplay" loop>
+                <source src="audio-file.ogg" type="audio/ogg" />
+                <source src="audio-file.mp3" type="audio/mpeg" />
+            </audio>
+		</center>
+    </div>
+    
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+		
+    </div>
+   
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <a href="Content.html">
+		<marquee direction="up" scrollamount="2" loop="100"> 
+    		<p style="font-size:21px; color:rgb(13, 12, 12)">
+          Ngày 20/10 dù anh đang ở rất xa nhưng anh vẫn muốn ôm em thật chặt và thật lâu. Đừng buồn khi không có anh ở bên cạnh trong ngày nay, hãy luôn mỉm cười rạng rỡ khi nhớ về anh nhé. Hy vọng chúng ta có thể ở cạnh bên nhau trong một ngày không xa
+    		</p>
+		</marquee> 
+        </a>
+    </div>
+
+<!--Chuyển trang sau 198s(Đồng thời hết bài hát-->
+<script type="text/javascript"> 
+	var jgt = 10; document.getElementById('time').innerHTML = jgt; 
+	function stime(){
+		document.getElementById('time').innerHTML = jgt; 
+		jgt = jgt - 1; 
+		if(jgt == 0){
+			clearInterval(timing); 
+			location = 'Content.html';
+			} 
+		} 
+	var timing = setInterval("stime();",19800); 
+</script>
+
+</div> 
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
